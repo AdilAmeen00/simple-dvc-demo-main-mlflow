@@ -3,10 +3,10 @@ name: Python application
 on:
   push:
     branches:
-    - main-mlflow
+    - main
   pull_request:
     branches:
-    - main-mlflow
+    - main
 
 jobs:
   build:
@@ -33,7 +33,7 @@ jobs:
     #     # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
     #     flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
-      run: |
+      run: |   # | is multiline string, which is useful for long scripts
         pytest -v
     # - name: Deploy to Heroku
     #   env:
